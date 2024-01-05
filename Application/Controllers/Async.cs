@@ -1,6 +1,6 @@
 ﻿namespace Application.Controllers
 {
-    public class VeiculoCommad
+    public class Async
     {
     }
 }
