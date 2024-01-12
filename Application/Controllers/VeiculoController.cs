@@ -10,32 +10,34 @@ namespace Application.Controllers
     public class VeiculoController : ControllerBase
     {
         private readonly IVeiculoService _veiculoService;
-        public VeiculoController (IVeiculoService veiculoService) 
+        public VeiculoController(IVeiculoService veiculoService)
         {
-             _veiculoService = veiculoService;
+            _veiculoService = veiculoService;
         }
+        #region Post
         [HttpPost]
         [Route("CadastrarVeiculo")]
-        public Async Task<IActionResult> PostAsy ([FromBody] VeiculoCommands commad)
+        public async Task<IActionResult> PostAsync([FromBody] VeiculoCommands command)
         {
-            await _veiculoService.PostAsync(commad);
-
-            return Ok();
-
-        }
-        [HttpGet]
-        [Route("SimularAluguel")]
-        public IActionResult  GetAsync()
-        {
-            return Ok();
-
+            return Ok(await _veiculoService.PostAsync(command));
         }
         [HttpPost]
         [Route("Alugar")]
         public IActionResult PostAsync()
         {
             return Ok();
-
         }
-    }
+        #endregion
+
+        [HttpGet]
+        [Route("SimularAluguel")]
+        public IActionResult GetAsync()
+        {
+            return Ok();
+        }
+        //[HttpGet]
+        //[Route("Veiculoalugados")]
+
+
+     }
 }

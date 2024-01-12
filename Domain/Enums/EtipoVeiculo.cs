@@ -10,6 +10,6 @@ namespace Domain.Enums
     {
         SUV = 1,
         Sedan = 2,
-        Reth = 3,
+        Hatch = 3,
     }
 }

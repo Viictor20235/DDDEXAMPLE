@@ -9,11 +9,12 @@ namespace Domain.Interfaces
 {
      public interface IVeiculoService 
      { 
-        Task PostAsync(VeiculoCommands commad);
+        Task <string> PostAsync(VeiculoCommands commad);
 
         void PostAsync();
 
         void GetAsync();
-       
+
+        Task<IEnumerable<VeiculoCommands>> GetVeiculosAlugadosAsync();
     }
 }
