@@ -1,4 +1,6 @@
 ﻿using Domain.Commands;
+using Domain.Enums;
+using Domain.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +17,8 @@ namespace Domain.Interfaces
 
         void GetAsync();
 
-        Task<IEnumerable<VeiculoCommands>> GetVeiculosAlugadosAsync();
+        Task<IEnumerable<VeiculoCommands>> GetVeiculosDisponiveis();
+        Task<SimularVeiculoAluguelViewModel> SimularVeiculoAluguel(int TotalDiasSimulado, EtipoVeiculo TipoVeiculo);
     }
 }
+
